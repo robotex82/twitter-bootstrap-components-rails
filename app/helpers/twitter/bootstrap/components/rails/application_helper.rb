@@ -7,8 +7,8 @@ module Twitter
             Twitter::Bootstrap::Components::Alert.new(self, options, &block).perform
           end
 
-          def bootstrap_badge(options)
-            Twitter::Bootstrap::Components::Badge.new(options).perform
+          def bootstrap_badge(options, &block)
+            Twitter::Bootstrap::Components::Badge.new(self, options, &block).perform
           end
 
           def bootstrap_breadcrumb(options)

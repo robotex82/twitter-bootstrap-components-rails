@@ -13,3 +13,9 @@
 = bootstrap_alert(context: :danger) do
   %strong Oh snap!
   Change a few things up and try submitting again.
+
+%h3 Dismissing
+
+= bootstrap_alert(context: :warning, dismissible: [:show, :fade]) do
+  %strong Holy guacamole!
+  You should check in on some of those fields below.

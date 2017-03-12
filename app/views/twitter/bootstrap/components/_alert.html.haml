@@ -1,2 +1,5 @@
-%div{ class: "alert alert-#{context}", role: "alert"}
+%div{ class: div_alert_classes.join(" "), role: "alert"}
+  - if dismissible
+    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+      %span{"aria-hidden" => "true"} &times;
   = block_output

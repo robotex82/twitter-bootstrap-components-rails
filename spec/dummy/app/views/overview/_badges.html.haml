@@ -1,0 +1,33 @@
+%h1
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+%h2
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+%h3
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+%h4
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+%h5
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+%h6
+  Example heading
+  = bootstrap_badge(context: :default) do
+    New
+
+%h3 Contextual variations
+
+= bootstrap_badge(context: :default) { 'Default' }
+= bootstrap_badge(context: :primary) { 'Primary' }
+= bootstrap_badge(context: :success) { 'Success' }
+= bootstrap_badge(context: :info)    { 'Info' }
+= bootstrap_badge(context: :warning) { 'Warning' }
+= bootstrap_badge(context: :danger)  { 'Danger' }
