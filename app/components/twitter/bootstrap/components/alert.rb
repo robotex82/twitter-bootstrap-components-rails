@@ -7,7 +7,7 @@ module Twitter
         def view_locals
           { 
             block_output:      @block_output,
-            context:           @options[:context],
+            context:           context,
             dismissible:       dismissible?,
             div_alert_classes: div_alert_classes
           }
@@ -18,9 +18,13 @@ module Twitter
         end
 
         def div_alert_classes
-          classes = ["alert", "alert-#{@options[:context]}"]
+          classes = ["alert", "alert-#{context}"]
           classes << ["alert-dismissible", *@options[:dismissible]] if @options[:dismissible].respond_to?(:join)
           classes
+        end
+
+        def context
+          @options[:context]
         end
       end
     end
