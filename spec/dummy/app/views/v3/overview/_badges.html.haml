@@ -1,0 +1,28 @@
+%a{:href => "#"}
+  Inbox
+  = bootstrap_badge do
+    42
+
+%br
+%br
+
+%button.btn.btn-primary{:type => "button"}
+  Messages
+  = bootstrap_badge do
+    5
+
+%h3 Self collapsing
+
+%ul.nav.nav-pills{:role => "tablist"}
+  %li.active{:role => "presentation"}
+    %a{:href => "#"}
+      Home
+      = bootstrap_badge do
+        5
+  %li{:role => "presentation"}
+    %a{:href => "#"} Profile
+  %li{:role => "presentation"}
+    %a{:href => "#"}
+      Messages
+      = bootstrap_badge do
+        3

@@ -10,6 +10,10 @@ require "action_cable/engine"
 # require "rails/test_unit/railtie"
 require "sprockets/railtie"
 
+require 'therubyracer'
+require 'less-rails'
+require 'twitter-bootstrap-rails'
+
 Bundler.require(*Rails.groups)
 require "twitter/bootstrap/components/rails"
 
