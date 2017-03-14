@@ -2,7 +2,23 @@
 Short description and motivation.
 
 ## Usage
-How to use my plugin.
+Add the helper to your application controller.
+
+Bootstrap v3
+
+```ruby
+class ApplicationController < ActionController::Base
+  helper Twitter::Bootstrap::Components::Rails::V3::ComponentsHelper
+end
+```
+
+Bootstrap v4
+
+```ruby
+class ApplicationController < ActionController::Base
+  helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper
+end
+```
 
 ## Installation
 Add this line to your application's Gemfile:
