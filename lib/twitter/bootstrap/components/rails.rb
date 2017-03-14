@@ -1,5 +1,4 @@
 require 'jquery-rails'
-require 'bootstrap'
 require 'haml-rails'
 
 require "twitter/bootstrap/components/rails/engine"
