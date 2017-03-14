@@ -1,0 +1,19 @@
+.media
+  - if horizontal_alignment == :left
+    %div{ class: div_media_object_classes.join(' ') }
+      -if link_target.present?
+        %a{ href: link_target }
+          %img.media-object{ image_options }/
+      -else
+        %img.media-object{ image_options }/
+    .media-body
+      = block_output
+  - if horizontal_alignment == :right
+    .media-body
+      = block_output
+    %div{ class: div_media_object_classes.join(' ') }
+      -if link_target.present?
+        %a{ href: link_target }
+          %img.media-object{ image_options }/
+      -else
+        %img.media-object{ image_options }/

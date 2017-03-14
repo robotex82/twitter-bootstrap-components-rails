@@ -11,6 +11,10 @@ module Twitter
             def bootstrap_badge(options = {}, &block)
               Twitter::Bootstrap::Components::V3::Badge.new(self, options, &block).perform
             end
+
+            def bootstrap_media_object(options = {}, &block)
+              Twitter::Bootstrap::Components::V3::MediaObject.new(self, options, &block).perform
+            end
           end
         end
       end
