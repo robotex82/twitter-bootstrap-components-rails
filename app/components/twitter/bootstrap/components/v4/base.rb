@@ -11,13 +11,18 @@ module Twitter
           end
 
           def perform
-            @block_output = @view.capture { @block.call(self) }
+            @block_output = block_output
             @view.render partial: self.class.name.underscore, locals: view_locals
           end
 
           private
 
           attr_reader :view_locals
+
+          def block_output
+            return unless @block.present?
+            @view.capture { @block.call(self) }
+          end
         end
       end
     end
