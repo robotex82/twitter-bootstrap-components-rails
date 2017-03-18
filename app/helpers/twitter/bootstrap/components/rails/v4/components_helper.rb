@@ -24,8 +24,8 @@ module Twitter
               Twitter::Bootstrap::Components::V4::ButtonGroup.new(options).perform
             end
 
-            def bootstrap_card(options)
-              Twitter::Bootstrap::Components::V4::Card.new(options).perform
+            def bootstrap_card(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Card.new(self, options, &block).perform
             end
 
             def bootstrap_carousel(options)
@@ -86,6 +86,24 @@ module Twitter
 
             def bootstrap_tooltip(options)
               Twitter::Bootstrap::Components::V4::Tooltip.new(options).perform
+            end
+
+            # subhelpers
+            
+            def card_block(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Card::Block.new(self, options, &block).perform
+            end
+            
+            def card_header(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Card::Header.new(self, options, &block).perform
+            end
+            
+            def card_blockquote(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Card::Blockquote.new(self, options, &block).perform
+            end
+
+            def card_footer(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Card::Footer.new(self, options, &block).perform
             end
           end
         end

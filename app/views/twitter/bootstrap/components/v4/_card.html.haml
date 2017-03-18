@@ -1,0 +1,6 @@
+.card{ class: additional_css_classes }
+  - if image_options.present?
+    %img.card-img-top{ image_options }/
+    = block_output
+  - else
+    = block_output

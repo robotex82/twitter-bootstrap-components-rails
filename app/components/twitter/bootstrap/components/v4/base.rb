@@ -12,7 +12,7 @@ module Twitter
 
           def perform
             @block_output = block_output
-            @view.render partial: self.class.name.underscore, locals: view_locals
+            @view.render partial: partial, locals: view_locals
           end
 
           private
@@ -22,6 +22,10 @@ module Twitter
           def block_output
             return unless @block.present?
             @view.capture { @block.call(self) }
+          end
+
+          def partial
+            self.class.name.underscore
           end
         end
       end

@@ -1,0 +1,134 @@
+%h3 Example
+
+.row
+  .col-lg-3
+    = bootstrap_card(image_options: { src: "https://placeholdit.imgix.net/~text?txtsize=33&txt=253x180&w=253&h=180" }) do
+      = card_block do
+        %h4.card-title Card title
+        %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
+
+%h3 Blocks
+
+= bootstrap_card do
+  = card_block do
+    This is some text within a card block.
+
+%h3 Titles, text, and links
+
+= bootstrap_card do
+  = card_block do
+    %h4.card-title Card title
+    %h6.card-subtitle.mb-2.text-muted Card subtitle
+    %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+    %a.card-link{:href => "#"} Card link
+    %a.card-link{:href => "#"} Another link
+
+%h3 Images
+
+= bootstrap_card(image_options: { src: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Image cap&w=1108&h=180" }) do
+  = card_block do
+    %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+
+%h3 List groups
+
+= bootstrap_card(type: :list_group) do
+  %ul.list-group.list-group-flush
+    %li.list-group-item Cras justo odio
+    %li.list-group-item Dapibus ac facilisis in
+    %li.list-group-item Vestibulum at eros
+
+%h3 Kitchen sink
+
+.row
+  .col-lg-3
+    = bootstrap_card(type: :kitchen_sink, image_options: { src: "https://placeholdit.imgix.net/~text?txtsize=33&txt=253x180&w=253&h=180" }) do
+      = card_block do
+        %h4.card-title Card title
+        %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+      %ul.list-group.list-group-flush
+        %li.list-group-item Cras justo odio
+        %li.list-group-item Dapibus ac facilisis in
+        %li.list-group-item Vestibulum at eros
+      = card_block do
+        %a.card-link{:href => "#"} Card link
+        %a.card-link{:href => "#"} Another link
+
+%h3 Header and footer
+
+= bootstrap_card do
+  = card_header do
+    Featured
+  = card_block do
+    %h4.card-title Special title treatment
+    %p.card-text With supporting text below as a natural lead-in to additional content.
+    %a.btn.btn-primary{:href => "#"} Go somewhere
+
+= bootstrap_card do
+  %h3.card-header Featured
+  = card_block do
+    %h4.card-title Special title treatment
+    %p.card-text With supporting text below as a natural lead-in to additional content.
+    %a.btn.btn-primary{:href => "#"} Go somewhere
+
+= bootstrap_card do
+  = card_header do
+    Quote
+  = card_block do
+    = card_blockquote do
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      %footer
+        Someone famous in
+        %cite{:title => "Source Title"} Source Title
+
+= bootstrap_card(additional_css_classes: "text-center") do
+  = card_header do
+    Featured
+  = card_block do
+    %h4.card-title Special title treatment
+    %p.card-text With supporting text below as a natural lead-in to additional content.
+    %a.btn.btn-primary{:href => "#"} Go somewhere
+  = card_footer(additional_css_classes: "text-muted") do
+    2 days ago
+
+%h3 Sizing
+
+%h4 Using grid markup
+
+.row
+  .col-sm-6
+    = bootstrap_card do
+      = card_block do
+        %h3.card-title Special title treatment
+        %p.card-text With supporting text below as a natural lead-in to additional content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
+  .col-sm-6
+    = bootstrap_card do
+      = card_block do
+        %h3.card-title Special title treatment
+        %p.card-text With supporting text below as a natural lead-in to additional content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
+
+%h3 Text alignment
+
+.row
+  .col-lg-4
+    = bootstrap_card do
+      = card_block do
+        %h4.card-title Special title treatment
+        %p.card-text With supporting text below as a natural lead-in to additional content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
+.row
+  .col-lg-4
+    = bootstrap_card(text: :center) do
+      = card_block do
+        %h4.card-title Special title treatment
+        %p.card-text With supporting text below as a natural lead-in to additional content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
+.row
+  .col-lg-4
+    = bootstrap_card(text: :right) do
+      = card_block do
+        %h4.card-title Special title treatment
+        %p.card-text With supporting text below as a natural lead-in to additional content.
+        %a.btn.btn-primary{:href => "#"} Go somewhere
