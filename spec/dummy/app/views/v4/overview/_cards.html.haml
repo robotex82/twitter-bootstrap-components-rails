@@ -132,3 +132,55 @@
         %h4.card-title Special title treatment
         %p.card-text With supporting text below as a natural lead-in to additional content.
         %a.btn.btn-primary{:href => "#"} Go somewhere
+
+%h3 Navigation
+
+= bootstrap_card(text: :center) do
+  = card_header do
+    %ul.nav.nav-tabs.card-header-tabs
+      %li.nav-item
+        %a.nav-link.active{:href => "#"} Active
+      %li.nav-item
+        %a.nav-link{:href => "#"} Link
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"} Disabled
+  = card_block do
+    %h4.card-title Special title treatment
+    %p.card-text With supporting text below as a natural lead-in to additional content.
+    %a.btn.btn-primary{:href => "#"} Go somewhere
+
+= bootstrap_card(text: :center) do
+  = card_header do
+    %ul.nav.nav-pills.card-header-pills
+      %li.nav-item
+        %a.nav-link.active{:href => "#"} Active
+      %li.nav-item
+        %a.nav-link{:href => "#"} Link
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"} Disabled
+  = card_block do
+    %h4.card-title Special title treatment
+    %p.card-text With supporting text below as a natural lead-in to additional content.
+    %a.btn.btn-primary{:href => "#"} Go somewhere
+
+%h3 Images
+
+%h4 Image caps
+
+%h3 Image overlays
+
+%h3 Card styles
+
+%h4 Inverted text
+
+%h4 Background variants
+
+%h4 Outline cards
+
+%h3 Card layout
+
+%h4 Card groups
+
+%h4 Card decks
+
+%h4 Card columns
