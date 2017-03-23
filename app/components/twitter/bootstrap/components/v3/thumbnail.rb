@@ -14,7 +14,7 @@ module Twitter
               context:           context,
               container_classes: container_classes,
               image_options:     image_options,
-              link_target:       link_target
+              link_options:      link_options
             }
           end
 
@@ -23,15 +23,15 @@ module Twitter
           end
 
           def container_classes
-             @container_classes ||= @options[:container_classes] ||= DEFAULT_CONTAINER_CLASSES
+             @options[:container_classes] || DEFAULT_CONTAINER_CLASSES
           end
 
           def image_options
-            @image_options ||= (@options[:image_options] || {}).reverse_merge!(alt: nil, src: DEFAULT_IMAGE_SRC)
+            (@options[:image_options] || {}).reverse_merge!(alt: nil, src: DEFAULT_IMAGE_SRC)
           end
 
-          def link_target
-            @options[:link_target] || "#"
+          def link_options
+            @options[:link_options] || {}
           end
         end
       end

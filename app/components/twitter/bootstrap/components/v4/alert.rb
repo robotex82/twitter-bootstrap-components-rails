@@ -21,11 +21,16 @@ module Twitter
           def div_alert_classes
             classes = ["alert", "alert-#{context}"]
             classes << ["alert-dismissible", *@options[:dismissible]] if @options[:dismissible].respond_to?(:join)
+            classes << additional_css_classes
             classes
           end
 
           def context
             @options[:context]
+          end
+
+          def additional_css_classes
+            @options[:class]
           end
         end
       end

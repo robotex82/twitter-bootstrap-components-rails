@@ -16,8 +16,8 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Breadcrumb.new(options).perform
             end
 
-            def bootstrap_button(options)
-              Twitter::Bootstrap::Components::V4::Button.new(options).perform
+            def bootstrap_button(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Button.new(self, options, &block).perform
             end
 
             def bootstrap_button_group(options)
@@ -44,6 +44,11 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Form.new(options).perform
             end
 
+            def bootstrap_form_for(object, *args, &block)
+              options = args.extract_options!
+              simple_form_for(object, *(args << options.merge(builder: Twitter::Bootstrap::Components::Rails::V4::DefaultFormBuilder, :defaults => { :input_html => { :class => "form-control" } })), &block)
+            end
+
             def bootstrap_input_group(options)
               ITwitter::Bootstrap::Components::V4::InputGroup.new(options).perform
             end
@@ -66,6 +71,10 @@ module Twitter
 
             def bootstrap_navbar(options)
               Twitter::Bootstrap::Components::V4::Navbar.new(options).perform
+            end
+
+            def bootstrap_navbar_brand(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::NavbarBrand.new(self, options, &block).perform
             end
 
             def bootstrap_pagination(options)

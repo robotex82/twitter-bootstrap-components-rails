@@ -1,0 +1,10 @@
+- case element_type
+- when :button
+  %button{ button_options }
+    = block_output
+- when :link
+  %a{ link_options }
+    = block_output
+- when :input
+  %input{ input_options }
+    = block_output
