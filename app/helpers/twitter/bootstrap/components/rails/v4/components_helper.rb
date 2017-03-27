@@ -20,8 +20,8 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Button.new(self, options, &block).perform
             end
 
-            def bootstrap_button_group(options)
-              Twitter::Bootstrap::Components::V4::ButtonGroup.new(options).perform
+            def bootstrap_button_group(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::ButtonGroup.new(self, options, &block).perform
             end
 
             def bootstrap_card(options = {}, &block)
@@ -40,10 +40,16 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Dropdown.new(options).perform
             end
 
+            # add-on
+            def bootstrap_flash
+              Twitter::Bootstrap::Components::V4::Flash.new(self).perform
+            end
+
             def bootstrap_form(options)
               Twitter::Bootstrap::Components::V4::Form.new(options).perform
             end
 
+            # add-on
             def bootstrap_form_for(object, *args, &block)
               options = args.extract_options!
               simple_form_for(object, *(args << options.merge(builder: Twitter::Bootstrap::Components::Rails::V4::DefaultFormBuilder, :defaults => { :input_html => { :class => "form-control" } })), &block)

@@ -1,0 +1,3 @@
+- flash.each do |message_context, message|
+  = bootstrap_alert(context: message_context, dismissible: [:show, :fade]) do
+    - message
