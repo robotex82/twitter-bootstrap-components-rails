@@ -26,7 +26,7 @@ module Twitter
           end
 
           def additional_css_classes
-            [@options[:additional_css_classes], text_algin_css_class].compact.join(" ")
+            [@options[:additional_css_classes], text_algin_css_class, inverse_css_class, context_css_class].compact.join(" ")
           end
 
           def text_align
@@ -40,6 +40,22 @@ module Twitter
             when :right
               'text-right'
             end
+          end
+
+          def inverse?
+            !!@options[:inverse]
+          end
+
+          def inverse_css_class
+            'card-inverse' if inverse?
+          end
+
+          def context
+            @options[:context]
+          end
+
+          def context_css_class
+            "card-#{context}" if context.present?
           end
         end
       end
