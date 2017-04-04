@@ -1,0 +1,10 @@
+.responsive-media {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+img.responsive-media-object {
+  object-fit: cover;
+  width: 100%;
+}

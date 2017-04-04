@@ -3,8 +3,6 @@ module Twitter
     module Components
       module V3
         class MediaObject < Base
-          DEFAULT_IMAGE_SRC = "https://placeholdit.imgix.net/~text?txtsize=16&txt=64x64&w=64&h=64".freeze
-
           private
 
           def view_locals
@@ -43,7 +41,7 @@ module Twitter
           end
 
           def image_options
-            @image_options ||= (@options[:image_options] || {}).reverse_merge!(alt: nil, src: DEFAULT_IMAGE_SRC)
+            @image_options ||= (@options[:image_options] || {}).reverse_merge!(alt: nil, src: nil)
           end
 
           def link_target
