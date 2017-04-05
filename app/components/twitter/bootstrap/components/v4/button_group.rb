@@ -21,7 +21,7 @@ module Twitter
           end
 
           def div_options
-            { class: div_css_classes, role: 'group', 'aria-label': "Button group" }
+            { class: div_css_classes, role: 'group', :'aria-label' => "Button group" }
           end
         end
       end
