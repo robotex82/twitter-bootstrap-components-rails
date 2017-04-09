@@ -1,14 +1,15 @@
-.responsive-media.col-lg-12
-  - image_div_css_classes = ["col-lg-2"]
-  - image_div_css_classes << "col-lg-push-10" if horizontal_alignment == :right
-  - if image_options[:src].present?
-    %div{ class: image_div_css_classes }
-      -if link_target.present?
-        %a{ href: link_target }
+%div{ class: div_container_classes }
+  .row
+    - image_div_css_classes = ["col-lg-#{media_columns}", "responsive-media-#{horizontal_alignment}"]
+    - image_div_css_classes << "col-lg-push-#{12 - media_columns}" if horizontal_alignment == :right
+    - if image_options[:src].present?
+      %div{ class: image_div_css_classes }
+        -if link_target.present?
+          %a{ href: link_target }
+            %img.responsive-media-object{ image_options }/
+        -else
           %img.responsive-media-object{ image_options }/
-      -else
-        %img.responsive-media-object{ image_options }/
-  - content_div_css_classes = ["responsive-media-body", "col-lg-10"]
-  - content_div_css_classes << "col-lg-pull-2" if horizontal_alignment == :right
-  %div{ class: content_div_css_classes }
-    = block_output
+    - content_div_css_classes = ["responsive-media-body", "responsive-media-body-#{horizontal_alignment}", "col-lg-#{12 - media_columns}"]
+    - content_div_css_classes << "col-lg-pull-#{media_columns}" if horizontal_alignment == :right
+    %div{ class: content_div_css_classes }
+      = block_output

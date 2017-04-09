@@ -10,6 +10,7 @@ module Twitter
               block_output:             @block_output,
               context:                  context,
               div_media_object_classes: div_media_object_classes,
+              div_container_classes:    div_container_classes,
               image_options:            image_options,
               link_target:              link_target,
               horizontal_alignment:     horizontal_alignment
@@ -18,6 +19,14 @@ module Twitter
 
           def div_media_object_classes
             ["media-#{horizontal_alignment}", "media-#{vertical_alignment}"]
+          end
+
+          def div_container_classes
+            ['media', additional_div_container_classes]
+          end
+
+          def additional_div_container_classes
+            @options[:additional_div_container_classes] || ''
           end
 
           def context
