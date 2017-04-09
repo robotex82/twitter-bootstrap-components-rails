@@ -8,7 +8,7 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Alert.new(self, options, &block).perform
             end
 
-            def bootstrap_badge(options, &block)
+            def bootstrap_badge(options = {}, &block)
               Twitter::Bootstrap::Components::V4::Badge.new(self, options, &block).perform
             end
 
