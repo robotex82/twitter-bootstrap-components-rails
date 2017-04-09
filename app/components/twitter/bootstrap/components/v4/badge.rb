@@ -25,7 +25,7 @@ module Twitter
           end
 
           def context
-            @options[:context]
+            @options[:context] || :default
           end
         end
       end
