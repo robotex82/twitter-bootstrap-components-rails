@@ -3,7 +3,7 @@
   %button{ button_options }
     = block_output
 - when :link
-  %a{ link_options }
+  = link_to(link_target, link_options) do
     = block_output
 - when :input
   %input{ input_options }
