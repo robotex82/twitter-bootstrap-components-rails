@@ -15,6 +15,7 @@ module Twitter
             { 
               block_output:   block_output,
               input_options:  input_options,
+              link_target:    link_target,
               link_options:   link_options,
               button_options: button_options,
               element_type:   element_type
@@ -69,7 +70,7 @@ module Twitter
           end
 
           def link_options
-            link_options = { href: link_target, class: css_classes.join(" "), role: "button" }
+            link_options = { class: css_classes.join(" "), role: "button" }
             link_options[:data]   = @options[:data]   if @options[:data].present?
             link_options[:method] = @options[:method] if @options[:method].present?
             link_options
