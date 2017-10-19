@@ -56,7 +56,7 @@ module Twitter
             end
 
             def bootstrap_input_group(options)
-              ITwitter::Bootstrap::Components::V4::InputGroup.new(options).perform
+              Twitter::Bootstrap::Components::V4::InputGroup.new(options).perform
             end
 
             def bootstrap_jumbotron(options)
