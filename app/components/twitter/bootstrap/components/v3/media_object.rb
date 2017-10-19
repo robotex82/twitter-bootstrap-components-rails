@@ -11,10 +11,15 @@ module Twitter
               context:                  context,
               div_media_object_classes: div_media_object_classes,
               div_container_classes:    div_container_classes,
+              container_id:             container_id,
               image_options:            image_options,
               link_target:              link_target,
               horizontal_alignment:     horizontal_alignment
             }
+          end
+
+          def container_id
+            @options[:container_id]
           end
 
           def div_media_object_classes

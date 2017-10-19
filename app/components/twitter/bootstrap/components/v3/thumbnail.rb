@@ -12,6 +12,7 @@ module Twitter
             { 
               block_output:      @block_output,
               context:           context,
+              container_id:      container_id,
               container_classes: container_classes,
               image_options:     image_options,
               link_options:      link_options
@@ -20,6 +21,10 @@ module Twitter
 
           def context
             @options[:context]
+          end
+
+          def container_id
+            @options[:container_id]
           end
 
           def container_classes
