@@ -32,6 +32,10 @@ module Twitter
               Twitter::Bootstrap::Components::V3::Thumbnail.new(self, options, &block).perform
             end
 
+            def bootstrap_responsive_embed(options = {}, &block)
+              Twitter::Bootstrap::Components::V3::ResponsiveEmbed.new(self, options, &block).perform
+            end
+
             # add ons
             def bootstrap_form_for(object, *args, &block)
               simple_form_for(object, *args, &block)
