@@ -40,6 +40,10 @@ module Twitter
             def bootstrap_form_for(object, *args, &block)
               simple_form_for(object, *args, &block)
             end
+
+            def bootstrap_navbar_brand(options = {}, &block)
+              Twitter::Bootstrap::Components::V3::NavbarBrand.new(self, options, &block).perform
+            end
           end
         end
       end
