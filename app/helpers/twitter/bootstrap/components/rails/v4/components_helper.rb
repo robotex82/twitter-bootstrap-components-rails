@@ -71,8 +71,12 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Modal.new(options).perform
             end
 
-            def bootstrap_nav(options)
-              Twitter::Bootstrap::Components::V4::Nav.new(options).perform
+            def bootstrap_nav(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Nav.new(self, options, &block).perform
+            end
+
+            def bootstrap_nav_item(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::NavItem.new(self, options, &block).perform
             end
 
             def bootstrap_navbar(options)
@@ -104,15 +108,15 @@ module Twitter
             end
 
             # subhelpers
-            
+
             def card_block(options = {}, &block)
               Twitter::Bootstrap::Components::V4::Card::Block.new(self, options, &block).perform
             end
-            
+
             def card_header(options = {}, &block)
               Twitter::Bootstrap::Components::V4::Card::Header.new(self, options, &block).perform
             end
-            
+
             def card_blockquote(options = {}, &block)
               Twitter::Bootstrap::Components::V4::Card::Blockquote.new(self, options, &block).perform
             end
