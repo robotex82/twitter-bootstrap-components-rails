@@ -4,7 +4,7 @@ module Twitter
       module V3
         class Button < Base
           SIZE_MAP = {
-            default:     'btn-default',
+            default:     nil,
             extra_small: 'btn-xs',
             small:       'btn-sm',
             large:       'btn-lg'
@@ -13,7 +13,7 @@ module Twitter
           private
 
           def view_locals
-            { 
+            {
               block_output:   block_output,
               input_options:  input_options,
               link_target:    link_target,
