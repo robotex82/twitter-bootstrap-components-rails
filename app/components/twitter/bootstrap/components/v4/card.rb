@@ -3,10 +3,21 @@ module Twitter
     module Components
       module V4
         class Card < Base
+          def initialize(*args)
+            super
+            @options.reverse_merge(default_options)
+          end
+
           private
 
+          def default_options
+            {
+              gutters: true
+            }
+          end
+
           def view_locals
-            { 
+            {
               block_output:           block_output,
               image_options:          image_options,
               additional_css_classes: additional_css_classes
@@ -26,7 +37,7 @@ module Twitter
           end
 
           def additional_css_classes
-            [@options[:additional_css_classes], text_algin_css_class, inverse_css_class, context_css_class].compact.join(" ")
+            [@options[:additional_css_classes], gutters_css_class, text_algin_css_class, inverse_css_class, context_css_class].compact.join(" ")
           end
 
           def text_align
@@ -40,6 +51,14 @@ module Twitter
             when :right
               'text-right'
             end
+          end
+
+          def gutters
+            @options[:gutters]
+          end
+
+          def gutters_css_class
+            @options[:gutters] ? nil : 'no-gutters'
           end
 
           def inverse?
