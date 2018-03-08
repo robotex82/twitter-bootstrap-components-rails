@@ -2,7 +2,7 @@ module Twitter
   module Bootstrap
     module Components
       module Rails
-        VERSION = '0.5.1'
+        VERSION = '0.6.0'.freeze
       end
     end
   end
