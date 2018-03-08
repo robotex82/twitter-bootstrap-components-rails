@@ -28,8 +28,12 @@ module Twitter
               Twitter::Bootstrap::Components::V4::Card.new(self, options, &block).perform
             end
 
-            def bootstrap_carousel(options)
-              Twitter::Bootstrap::Components::V4::Carousel.new(options).perform
+            def bootstrap_carousel(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::Carousel.new(self, options, &block).perform
+            end
+
+            def bootstrap_carousel_item(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::CarouselItem.new(self, options, &block).perform
             end
 
             def bootstrap_collapse(options)
@@ -47,6 +51,10 @@ module Twitter
 
             def bootstrap_form(options)
               Twitter::Bootstrap::Components::V4::Form.new(options).perform
+            end
+
+            def bootstrap_portrait_card(options = {}, &block)
+              Twitter::Bootstrap::Components::V4::PortraitCard.new(self, options, &block).perform
             end
 
             # add-on

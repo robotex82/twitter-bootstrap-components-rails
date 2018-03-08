@@ -1,0 +1,6 @@
+- div_classes = active ? 'carousel-item active' : 'carousel-item'
+%div{ class: div_classes }
+  %img.d-block.w-100{ src: image_source }/
+  - if caption.present?
+    .carousel-caption.d-none.d-md-block
+      = caption

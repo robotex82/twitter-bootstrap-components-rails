@@ -1,1 +1,1 @@
-require 'twitter/bootstrap/components/rails'
+require 'twitter_bootstrap_components_rails'
