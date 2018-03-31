@@ -18,7 +18,7 @@ module Twitter
           end
 
           def div_container_classes
-            ['responsive-media', 'col-lg-12', additional_div_container_classes]
+            ['responsive-media', 'col-lg-12', additional_div_container_classes].flatten
           end
         end
       end
