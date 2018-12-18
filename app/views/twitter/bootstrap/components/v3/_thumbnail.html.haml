@@ -1,6 +1,6 @@
 - if block_output
   %div{ class: container_classes, id: container_id }
-    .thumbnail
+    %div{ class: thumbnail_classes }
       - if link_options[:href].present?
         %a{ link_options }
           %img{ image_options }/
@@ -14,5 +14,5 @@
       %a.thumbnail{ link_options }
         %img{ image_options }/
     - else
-      .thumbnail
+      %div{ class: thumbnail_classes }
         %img{ image_options }/
