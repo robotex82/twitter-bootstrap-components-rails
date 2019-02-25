@@ -1,6 +1,12 @@
 # Twitter::Bootstrap::Components::Rails
 Short description and motivation.
 
+## Upgrading to 1.0.0
+
+Version 1.0.0 does not include jquery-rails by default anymore. You need to require
+the gem by yourself or load jquery from a cdn.
+
+
 ## Usage
 Add the helper to your application controller.
 
@@ -8,7 +14,7 @@ Bootstrap v3
 
 ```ruby
 class ApplicationController < ActionController::Base
-  helper Twitter::Bootstrap::Components::Rails::V3::ComponentsHelper
+  view_helper Twitter::Bootstrap::Components::Rails::V3::ComponentsHelper, as: :bootstrap_heper
 end
 ```
 
@@ -16,7 +22,7 @@ Bootstrap v4
 
 ```ruby
 class ApplicationController < ActionController::Base
-  helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper
+  view_helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper, as: :bootstrap_heper
 end
 ```
 

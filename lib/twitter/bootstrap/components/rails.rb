@@ -1,5 +1,5 @@
-require 'jquery-rails'
 require 'haml-rails'
+require 'rao-view_helper'
 
 require "twitter/bootstrap/components/rails/engine"
 

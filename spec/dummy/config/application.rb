@@ -12,6 +12,7 @@ require "sprockets/railtie"
 
 require 'therubyracer'
 require 'less-rails'
+require 'jquery-rails'
 require 'twitter-bootstrap-rails'
 
 Bundler.require(*Rails.groups)
